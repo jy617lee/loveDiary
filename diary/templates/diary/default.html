@@ -8,12 +8,14 @@
   <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 </head>
 
+<a href="{% url 'new_post' %}"><span class="glyphicon glyphicon-plus btn btn-default"></span></a></h1>
 <body>
   <div class="page-header">
   <h1>Love Diary</h1>
   </div>
   <div class="container postings">
     {% for posting in postings%}
+    <h2><a href='{% url 'detail' postkey=posting.pk %}'</a></h2>
     <p> date : {{posting.update_date}}</p>
     <p> {{posting.text}}</p>
     {% endfor %}

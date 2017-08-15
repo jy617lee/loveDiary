@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^new/', views.post, name='new_post'),
-    url(r'^post/(?P<postkey>[0-9]+)/$', views.detail, name = 'detail'),
+    url(r'^detail/(?P<postkey>[0-9]+)/$', views.detail, name = 'detail'),
+    url(r'^delete/(?P<postkey>[0-9]+)/$', views.delete, name = 'delete'),
 ]

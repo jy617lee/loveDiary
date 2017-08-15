@@ -23,3 +23,9 @@ def post(request):
 def detail(request, postkey):
     posting = Posting.objects.get(pk = postkey)
     return render(request, 'diary/detail.html', {'posting':posting})
+
+def delete(request, postkey):
+    posting = Posting.objects.get(pk = postkey)
+    posting.delete()
+    postings = Posting.objects.all()
+    return render(request, 'diary/default.html', {'postings':postings})

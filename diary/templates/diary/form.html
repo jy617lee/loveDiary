@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <title>Love Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+  <div class="page-header">
+   <h1>Today's Diary</h1>
+  </div>
+  <div class="container Diary">
+   <form method="POST" class="post-form">
+     {%csrf_token%} {{form.as_p}}
+     <button type="submit" class="save btn btn-default">Save</button>
+   </form>
+  </div>
+ </body>
+</html>

@@ -19,3 +19,7 @@ def post(request):
     else :
         form = PostForm();
         return render(request, 'diary/form.html', {'form':form})
+
+def detail(request, postkey):
+    posting = Posting.objects.get(pk = postkey)
+    return render(request, 'diary/detail.html', {'posting':posting})
